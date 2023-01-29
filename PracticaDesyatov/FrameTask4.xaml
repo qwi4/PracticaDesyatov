@@ -1,0 +1,74 @@
+﻿<Window
+    x:Class="PracticaDesyatov.FrameTask4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PracticaDesyatov"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="FrameTask4"
+    Width="350"
+    Height="400"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Grid>
+
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Меню">
+                <MenuItem
+                    x:Name="Exit"
+                    Click="closeClick"
+                    Header="Выход" />
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="4*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Margin="10,25,10,10">
+                Сформировать одномерный массив из количества<LineBreak />
+                положительных элементов столбцов матрицы.</TextBlock>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <DataGrid
+                    x:Name="dataGrid"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    AutoGenerateColumns="True"
+                    IsEnabled="False" />
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <TextBlock Margin="3" Text="Введите количество столбцов" />
+                    <TextBox x:Name="massiveColumnsText" Margin="5" />
+
+                    <TextBlock Margin="3" Text="Введите количество строк" />
+                    <TextBox x:Name="massiveRowsText" Margin="3" />
+                    <Button
+                        Margin="3"
+                        Click="initINTMassiveClick"
+                        Content="Создать массив" />
+                </StackPanel>
+
+                <Button
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Height="20"
+                    Margin="10"
+                    Click="SolutionTask4"
+                    Content="Решить" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
